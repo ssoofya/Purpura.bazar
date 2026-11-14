@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Purpura - Artículos útiles, lindos y accesibles para tu hogar y cocina en Córdoba, Argentina.">
+  <title>Purpura | Hogar, Cocina y Decoración</title>
+
+  <!-- Tipografías de Google Fonts: Cormorant Garamond y Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconografía ligera Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="top-announcement">
+    <p><i class="ph ph-heart"></i> Entregas y envíos coordinados en <strong>Córdoba, Argentina</strong> <i class="ph ph-sparkle"></i></p>
+  </div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand-logo">
+        <span class="logo-main">PURPURA</span>
+        <span class="logo-sub">BAZAR</span>
+      </a>
+
+      <!-- Menú principal de navegación -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#categorias" class="nav-link">Categorías</a></li>
+          <li><a href="#productos" class="nav-link">Productos</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Acciones de cabecera -->
+      <div class="header-actions">
+        <!-- Botón WhatsApp directo de cabecera -->
+        <a href="#" id="header-whatsapp-btn" target="_blank" class="btn btn-sm btn-header-wa" aria-label="Consultar por WhatsApp">
+          <i class="ph ph-whatsapp-logo"></i>
+          <span>Consultar</span>
+        </a>
+
+        <!-- Botón abrir Carrito -->
+        <button class="cart-trigger-btn" id="cart-open-btn" aria-label="Abrir carrito de compras">
+          <i class="ph ph-bag"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+
+        <!-- Botón Menú Móvil -->
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Alternar menú móvil">
+          <i class="ph ph-list" id="mobile-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== SECCIÓN 1: INICIO (HERO) ==================== -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-container">
+        <div class="hero-copy">
+          <span class="hero-tag"><i class="ph ph-sparkle"></i> Tienda Online Oficial</span>
+          <h1 class="hero-title">Todo lo que buscás, en un solo lugar</h1>
+          <p class="hero-subtitle">
+            Descubrí nuestros productos y encontrá eso que estabas buscando. Detalles prácticos y delicados para transformar cada rincón de tu casa.
+          </p>
+          <div class="hero-actions">
+            <a href="#productos" class="btn btn-primary">
+              Explorar productos <i class="ph ph-arrow-down-right"></i>
+            </a>
+            <a href="#categorias" class="btn btn-secondary">
+              Ver categorías
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="img/Purpura.jpg" alt="Bazar, vajilla y organización para el hogar" class="hero-image">
+            <div class="hero-floating-pill">
+              <i class="ph ph-map-pin"></i>
+              <span>Desde Córdoba para todo tu hogar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 2: CATEGORÍAS ==================== -->
+    <section class="section categories-section" id="categorias">
+      <div class="section-heading">
+        <span class="section-eyebrow">Organización & Variedad</span>
+        <h2 class="section-title">Explorá por Categorías</h2>
+        <div class="brand-divider"></div>
+        <p class="section-subtitle">Hacé clic sobre cualquier categoría para filtrar automáticamente nuestro catálogo.</p>
+      </div>
+
+      <div class="categories-grid" id="categories-grid">
+        <!-- Renderizado dinámico desde script.js -->
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 3: CATÁLOGO DE PRODUCTOS ==================== -->
+    <section class="section products-section" id="productos">
+      <div class="section-heading">
+        <span class="section-eyebrow">Colección Exclusiva</span>
+        <h2 class="section-title">Catálogo de Productos</h2>
+        <div class="brand-divider"></div>
+      </div>
+
+      <!-- Barra de Filtros y Búsqueda -->
+      <div class="catalog-toolbar">
+        <div class="search-input-wrapper">
+          <i class="ph ph-magnifying-glass"></i>
+          <input type="text" id="catalog-search" placeholder="Buscar por nombre o descripción (ej: frasco, taza, organizador)...">
+          <button id="clear-search-btn" class="clear-search-btn" title="Limpiar búsqueda" style="display: none;">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+
+        <div class="category-chips-wrapper" id="category-chips">
+          <!-- Botones tipo chip creados dinámicamente -->
+        </div>
+      </div>
+
+      <!-- Conteo de resultados -->
+      <div class="catalog-results-info">
+        <span id="results-count">Cargando productos...</span>
+      </div>
+
+      <!-- Contenedor del listado de productos -->
+      <div class="products-grid" id="products-grid">
+        <!-- Tarjetas generadas dinámicamente desde script.js -->
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 4: SOBRE NOSOTROS ==================== -->
+    <section class="section about-section" id="nosotros">
+      <div class="about-container">
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80" alt="Espacios ordenados y artículos de diseño para el hogar" class="about-img">
+        </div>
+        <div class="about-content">
+          <span class="section-eyebrow">Conocé nuestra historia</span>
+          <h2 class="section-title">Sobre Purpura Bazar</h2>
+          <div class="brand-divider" style="margin-left: 0;"></div>
+          <p class="about-description">
+            En <strong>Purpura Bazar</strong> creemos que los detalles hacen la diferencia. Nacimos en <strong>Córdoba</strong> con la ilusión de acercarte una selección especial de artículos útiles, lindos y accesibles para tu cocina, organización, decoración y el disfrute de la vida cotidiana.
+          </p>
+          <p class="about-description">
+            Nos apasiona renovar espacios combinando practicidad con calidez visual. Cada pieza está pensada para sumar armonía a tu casa y resolver tus necesidades diarias con el trato cercano, honesto y personalizado que te merecés.
+          </p>
+          <div class="about-values">
+            <div class="value-badge">
+              <i class="ph ph-check-circle"></i>
+              <span>Calidad seleccionada</span>
+            </div>
+            <div class="value-badge">
+              <i class="ph ph-tag"></i>
+              <span>Precios accesibles</span>
+            </div>
+            <div class="value-badge">
+              <i class="ph ph-chats-circle"></i>
+              <span>Atención personalizada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN 5: CONTACTO ==================== -->
+    <section class="section contact-section" id="contacto">
+      <div class="section-heading">
+        <span class="section-eyebrow">Estamos para ayudarte</span>
+        <h2 class="section-title">Canales de Contacto</h2>
+        <div class="brand-divider"></div>
+        <p class="section-subtitle">Escribinos para chequear stock, realizar pedidos o coordinar entregas.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Tarjeta WhatsApp -->
+        <div class="contact-card">
+          <div class="contact-card-icon wa-icon">
+            <i class="ph ph-whatsapp-logo"></i>
+          </div>
+          <h3>WhatsApp Directo</h3>
+          <p>La forma más rápida de coordinar tu pedido y consultar dudas.</p>
+          <a href="#" id="contact-whatsapp-btn" target="_blank" class="btn btn-wa-full">
+            <i class="ph ph-whatsapp-logo"></i> Escribinos por WhatsApp
+          </a>
+        </div>
+
+        <!-- Tarjeta Instagram -->
+        <div class="contact-card">
+          <div class="contact-card-icon ig-icon">
+            <i class="ph ph-instagram-logo"></i>
+          </div>
+          <h3>Instagram</h3>
+          <p>Seguí nuestras novedades, fotos de productos y nuevos ingresos.</p>
+          <a href="#" id="contact-instagram-btn" target="_blank" class="btn btn-secondary w-100">
+            <i class="ph ph-instagram-logo"></i> Seguir en Instagram
+          </a>
+        </div>
+
+        <!-- Tarjeta Ubicación & Horarios -->
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="ph ph-clock"></i>
+          </div>
+          <h3>Horarios y Medios de Pago</h3>
+          <ul class="contact-details-list">
+            <li><strong>Ubicación:</strong> <span id="display-location">Córdoba, Argentina</span></li>
+            <li><strong>Atención:</strong> <span id="display-hours">Configurar horarios</span></li>
+            <li><strong>Medios de Pago:</strong> <span id="display-payments">Efectivo, Transferencia y Mercado Pago</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== MODAL / DRAWER DEL CARRITO ==================== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="ph ph-bag"></i>
+        <h3>Mi Carrito</h3>
+      </div>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Cerrar carrito">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-items" id="cart-drawer-items">
+      <!-- Elementos generados dinámicamente con JavaScript -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0</span>
+      </div>
+      <div class="cart-summary-line total-line">
+        <span>Total estimado</span>
+        <span id="cart-total-price">$0</span>
+      </div>
+      <p class="cart-note">* Los costos de envío o puntos de retiro se coordinan por WhatsApp.</p>
+      
+      <button class="btn btn-wa-checkout" id="cart-checkout-wa-btn">
+        <i class="ph ph-whatsapp-logo"></i> Enviar pedido por WhatsApp
+      </button>
+      <button class="cart-clear-btn" id="cart-clear-btn">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <!-- ==================== BOTÓN FLOTANTE WHATSAPP ==================== -->
+  <a href="#" class="floating-wa-btn" id="floating-wa-btn" target="_blank" aria-label="Escribinos por WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+    <span class="floating-tooltip">¿Dudas? ¡Escribinos!</span>
+  </a>
+
+  <!-- ==================== PIE DE PÁGINA (FOOTER) ==================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <span class="logo-main">PURPURA</span>
+          <span class="logo-sub">BAZAR</span>
+        </div>
+        <p class="footer-desc">
+          Artículos útiles, lindos y accesibles para tu hogar y vida cotidiana.
+        </p>
+        <p class="footer-highlight">Gracias por elegir Purpura Bazar 💜</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul class="footer-nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto & Ubicación</h4>
+        <p><i class="ph ph-map-pin"></i> Córdoba, Argentina</p>
+        <div class="footer-social-icons">
+          <a href="#" id="footer-ig-link" target="_blank" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" id="footer-wa-link" target="_blank" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> PURPURA BAZAR. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Lógica JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
