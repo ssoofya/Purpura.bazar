@@ -31,10 +31,12 @@ const categorias = [
   { id: "Hogar", nombre: "Hogar", imagen: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" },
   { id: "Organización", nombre: "Organización", imagen: "img/Organizacion.jpg" },
   { id: "Bazar", nombre: "Bazar", imagen: "img/Bazar.jpg" },
-  { id: "Regalos", nombre: "Regalos", imagen: "img/Regalos.jpg" },
+  { id: "Utiles", nombre: "Utiles", imagen: "img/Escolares.jpg" },
   { id: "Navidad", nombre: "Navidad", imagen: "img/Navidad.jpg" },
-  { id: "Belleza y maquillaje", nombre: "Belleza y maquillaje", imagen: "img/Maquillaje.jpg" }
+  { id: "Belleza y maquillaje", nombre: "Belleza y maquillaje", imagen: "img/maquillaje.jpg" }
 ];
+
+
 
 
 
@@ -53,22 +55,22 @@ const productos = [
     descripcion: "Agendas 2027.",
     precio: 13000,
     etiqueta: "Destacado",
-   imagen: "img/Libretas.jpg"
+    imagen: "img/Libretas.jpg"
   },
   {
     id: 2,
-    nombre: "Set de PLatos",
+    nombre: "Set de platos",
     categoria: "Cocina",
     descripcion: "Set de 30 piezas con tacitas incluidas, completo color blanco.",
     precio: 90000,
     etiqueta: "Nuevo",
-   imagen: "img/Platos.jpg"
+    imagen: "img/Platos.jpg"
   },
   {
     id: 3,
-    nombre: "Focos Led luz calida",
+    nombre: "Focos LED luz cálida",
     categoria: "Decoración",
-    descripcion: "Cortina de focos de forma esferica de 6 metros, luz cálida. Perfectos para exteriores e interiores.",
+    descripcion: "Cortina de focos de forma esférica de 6 metros, luz cálida. Perfectos para exteriores e interiores.",
     precio: 20000,
     etiqueta: null,
     imagen: "img/Focos.jpg"
@@ -77,16 +79,16 @@ const productos = [
     id: 4,
     nombre: "Paleta de maquillaje",
     categoria: "Belleza y maquillaje",
-    descripcion: "Paleta con 8 sombras Natural Sclupt.",
+    descripcion: "Paleta con 8 sombras Natural Sculpt.",
     precio: 8000,
     etiqueta: "Ideal Regalo",
     imagen: "img/Sombras.jpg"
   },
   {
     id: 5,
-    nombre: "Kit de Utensilios",
+    nombre: "Kit de utensilios",
     categoria: "Cocina",
-    descripcion: "Kit de Utensilios de silicona, varios colores.",
+    descripcion: "Kit de utensilios de silicona, varios colores.",
     precio: 15000,
     etiqueta: null,
     imagen: "img/Utensilios.jpg"
@@ -95,66 +97,179 @@ const productos = [
     id: 6,
     nombre: "Reloj de pared",
     categoria: "Hogar",
-    descripcion: "Reloj de pared moderno con diseño elegante 30CM.",
+    descripcion: "Reloj de pared moderno con diseño elegante de 30 cm.",
     precio: 14000,
     etiqueta: "Destacado",
     imagen: "img/Reloj.jpg"
   },
   {
     id: 7,
-    nombre: "Velas Decorativas",
+    nombre: "Velas decorativas",
     categoria: "Hogar",
-    descripcion: "Velas Decorativas en frasco de vidrio.",
+    descripcion: "Velas decorativas en frasco de vidrio.",
     precio: 7500,
     etiqueta: null,
     imagen: "img/Velas.jpg"
   },
   {
     id: 8,
-    nombre: "Balanza Digital",
-    categoria: "Regalos",
-    descripcion: "Balanza digital de vidrio templado, Capacidad maxima 180KG .",
+    nombre: "Balanza digital",
+    categoria: "Hogar",
+    descripcion: "Balanza digital de vidrio templado, capacidad máxima de 180 kg.",
     precio: 12800,
-    etiqueta: "nuevo",
+    etiqueta: "Nuevo",
     imagen: "img/Balanza.jpg"
   },
   {
     id: 9,
-    nombre: "Arbol con Luces",
-    categoria: "decoración",
-    descripcion: "Arbol decorativo con luces LED.",
+    nombre: "Árbol con luces",
+    categoria: "Decoración",
+    descripcion: "Árbol decorativo con luces LED.",
     precio: 20000,
-    etiqueta: "nuevo",
+    etiqueta: "Nuevo",
     imagen: "img/Arbol.jpg"
   },
   {
-    id:10,
-    nombre: "Set De Baño",
-    categoria: "hogar",
-    descripcion: "Set de baño de 4 piezas, 16CM.",
+    id: 10,
+    nombre: "Set de baño",
+    categoria: "Hogar",
+    descripcion: "Set de baño de 4 piezas, 16 cm.",
     precio: 18500,
     etiqueta: "Popular",
     imagen: "img/Setbaño.jpg"
   },
   {
-    id:11,
-    nombre: "Maquina de coser",
-    categoria: "hogar",
-    descripcion: "Mini maquina de coser, marca OM.",
+    id: 11,
+    nombre: "Máquina de coser",
+    categoria: "Hogar",
+    descripcion: "Mini máquina de coser, marca OM.",
     precio: 22000,
-    etiqueta: "",
+    etiqueta: null,
     imagen: "img/Maquinacoser.jpg"
-  }
+  },
+  {
+    id: 12,
+    nombre: "Sets de cubiertos",
+    categoria: "Hogar",
+    descripcion: "Sets de cubiertos disponibles en varios colores.",
+    precio: 15000,
+    etiqueta: null,
+    imagen: "img/Cubiertos.jpg"
+  },
+  {
+    id: 13,
+    nombre: "Manguerita solar",
+    categoria: "Decoración",
+    descripcion: "Manguerita solar de luz cálida. 10 metros: $16.000. 5 metros: $12.800.",
+    precio: 16000,
+    etiqueta: null,
+    imagen: "img/Manguera.jpg"
+  },
+  {
+    id: 14,
+    nombre: "Luz navideña estrellas",
+    categoria: "Navidad",
+    descripcion: "Guirnalda LED navideña con estrellas decorativas, luz cálida y 110 luces. Ideal para crear un ambiente mágico y acogedor en Navidad.",
+    precio: 16000,
+    etiqueta: null,
+    imagen: "img/Led.navidad.jpg"
+  },
+  {
+    id: 15,
+    nombre: "Vinchas navideñas",
+    categoria: "Navidad",
+    descripcion: "Vinchas navideñas con diseños de Papá Noel, duendes y renos. Ideales para complementar tus looks y disfrutar de la Navidad con diversión y estilo.",
+    precio: 5000,
+    etiqueta: "Popular",
+    imagen: "img/Vinchas.jpg"
+  },
+  {
+  id: 15,
+  nombre: "Karaoke portátil",
+  categoria: "Bazar",
+  descripcion: "Sistema de karaoke portátil con parlante e iluminación LED de colores. Incluye micrófono inalámbrico.",
+  precio: 1500,
+  etiqueta: "",
+  imagen: "img/Karaoke.jpg"
+},
+{
+  id: 16,
+  nombre: "Linterna multifunción con kit de herramientas",
+  categoria: "Bazar",
+  descripcion: "Linterna multifunción con kit de herramientas incorporado, ideal para el hogar, reparaciones y emergencias. Práctica y versátil para tener siempre a mano.",
+  precio: 20000,
+  etiqueta: "Destacado",
+  imagen: "img/Linterna.jpg"
+},
+{
+  id: 17,
+  nombre: "Set de Copas con Borde Dorado",
+  categoria: "Bazar",
+  descripcion: "Elegante set de 6 copas de vidrio transparente con detalles en dorado metalizado. Ideales para darle un toque sofisticado y especial a tu mesa.",
+  precio: 18000,
+  etiqueta: "Destacado",
+  imagen: "img/CopasDorado.jpg"
+},
+{
+  id: 18,
+  nombre: "Mopa Giratorio con Balde",
+  categoria: "Hogar",
+  descripcion: "Set de limpieza con balde y mopa giratoria de microfibra. Práctico y fácil de usar.",
+  precio: 18500,
+  etiqueta: "",
+  imagen: "img/Mopa.jpg"
+},
+{
+  id: 19,
+  nombre: "Botella Térmica LUO",
+  categoria: "Bazar",
+  descripcion: "Botella térmica de acero inoxidable con diseños variados. Incluye accesorios para mate y tereré.",
+  precio: 25000,
+  etiqueta: "",
+  imagen: "img/BotellasLUO.jpg"
+},
+{
+  id: 20,
+  nombre: "Guirnalda de Luces Solar LED",
+  categoria: "Hogar",
+  descripcion: "Guirnalda solar con luces LED cálidas en forma de flores. Ideal para decorar jardines y espacios exteriores.",
+  precio: 13000,
+  etiqueta: "Destacado",
+  imagen: "img/GuirnaldaSolar.jpg",
+},
+{
+  id: 21,
+  nombre: "Jarra Eléctrica Premium",
+  categoria: "Cocina",
+  descripcion: "Jarra eléctrica de diseño acanalado, disponible en gris, negro y blanco. Elegante y práctica para tu cocina.",
+  precio: 27000,
+  etiqueta: "Popular",
+  imagen: "img/JarraElectrica.jpg"
+},
+{
+  id: 22,
+  nombre: "Set de Bolas Navideñas",
+  categoria: "Navidad",
+  descripcion: "Esferas decorativas navideñas en tonos plateados, dorados, rojos, celestes y lilas. Disponibles con acabados brillantes, mate y glitter, en sets de 6, 9 y 12 unidades y diferentes tamaños.",
+  precio: 5500,
+  etiqueta: "Destacado",
+  imagen: "img/BolasNavideñas.jpg"
+},
 ];
+
+
 
 /* ==========================================================================
    ESTADO GLOBAL DEL CARRITO (PERSISTENCIA CON LOCALSTORAGE)
    ========================================================================== */
+
+
+
 let carrito = [];
 
 try {
     carrito = JSON.parse(
-        localStorage.getItem("Purpura_bazar_cart")
+        localStorage.getItem("loreley_bazar_cart")
     ) || [];
 
     if (!Array.isArray(carrito)) {
@@ -164,14 +279,17 @@ try {
 } catch (error) {
     console.error("Error al cargar el carrito:", error);
     carrito = [];
-    localStorage.removeItem("Purpura_bazar_cart");
+    localStorage.removeItem("loreley_bazar_cart");
 }
+
 let categoriaActiva = "todos";
 let terminoBusqueda = "";
+
 
 /* ==========================================================================
    REFERENCIAS DEL DOM
    ========================================================================== */
+
 const categoriesGrid = document.getElementById("categories-grid");
 const categoryChips = document.getElementById("category-chips");
 const productsGrid = document.getElementById("products-grid");
